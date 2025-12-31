@@ -2,10 +2,24 @@ title: "مدونة عمر"
 baseurl: "/blog"
 url: "https://omarhmza.github.io"
 remote_theme: "mmistakes/minimal-mistakes"
+
 plugins:
   - jekyll-include-cache
   - jekyll-remote-theme
-  # تفعيل نظام الأقسام والتاغات
+
+# إعدادات اللغة والاتجاه
+locale: "ar-SA"
+rtl: true
+words_per_minute: 150
+
+# تفعيل القائمة العلوية
+navigation: main 
+
+# إعدادات الروابط للعربية
+slugify:
+  mode: "pretty"
+
+# نظام الأقسام والوسوم
 category_archive:
   type: liquid
   path: /categories/
@@ -13,7 +27,7 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# إعدادات افتراضية لعرض المقالات (ضروري جداً)
+# الإعدادات الافتراضية للمقالات
 defaults:
   - scope:
       path: ""
@@ -22,14 +36,4 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      
-  locale: "ar-SA"
-rtl: true
-
-# تفعيل القائمة العلوية التي أنشأناها
-navigation: main 
-words_per_minute: 150
-# إعدادات الروابط للعربية
-slugify:
-  mode: "pretty"
-
+      comments: true
