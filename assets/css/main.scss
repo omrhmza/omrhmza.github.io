@@ -1,40 +1,42 @@
 ---
-# جيكل يحتاج هذه الأسطر لمعالجة ملف الـ Sass
+# الضروري جداً ترك هذه الأسطر الفارغة في البداية لمعالجة الملف
 ---
 
-@import "minimal-mistakes"; 
-
-// استيراد خط تجوال
+// 1. استيراد الخط من جوجل
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
-// إعدادات الـ RTL والخط
-html {
-  direction: rtl;
-}
+// 2. تغيير المتغيرات الأساسية (يجب أن توضع قبل استيراد الثيم)
+$sans-serif: "Tajawal", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$global-font-family: $sans-serif;
 
+// 3. استيراد الثيم (سيستخدم المتغيرات أعلاه)
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
+@import "minimal-mistakes"; 
+
+// 4. إعدادات RTL المخصصة
 body {
-  font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif !important;
+  direction: rtl;
+  text-align: right;
+  font-family: $sans-serif !important;
 }
 
-// تعديل تموضع العناصر الأساسية للقالب ليناسب الـ RTL
-.sidebar {
-  float: right !important;
-  margin-right: 0 !important;
-  margin-left: 2em !important;
-}
-
-.page {
-  float: left !important;
-  padding-right: 0 !important;
-  padding-left: 2em !important;
-}
-
-/* قلب اتجاه عناصر التنقل (Breadcrumbs) */
-.breadcrumbs {
+// تعديل اتجاه الهيدر والقوائم
+.masthead__menu-item, 
+.sidebar, 
+.page__content, 
+.page__footer,
+.archive__item-title {
   text-align: right !important;
 }
 
-/* إصلاح اتجاه أسهم التنقل في الأسفل */
-.pagination--pager {
-  float: left !important;
+// إصلاح الهوامش للغة العربية
+.masthead__menu-item {
+  margin-left: 0;
+  margin-right: 2em;
+}
+
+// منع انقلاب الأيقونات
+.fas, .fab, .far {
+  direction: ltr !important;
+  display: inline-block;
 }
