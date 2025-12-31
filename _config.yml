@@ -1,0 +1,4 @@
+title: "مدونتي التجريبية"
+description: "تجربة أولى مع Jekyll و GitHub Pages"
+url: "https://اسمك.github.io"  # استبدل باسمك
+remote_theme: "mmistakes/minimal-mistakes"
