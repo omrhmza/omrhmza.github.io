@@ -25,6 +25,9 @@ defaults:
       
   locale: "ar-SA"
 rtl: true
+
+# تفعيل القائمة العلوية التي أنشأناها
+navigation: main 
 words_per_minute: 150
 # إعدادات الروابط للعربية
 slugify:

@@ -1,0 +1,11 @@
+main:
+  - title: "الرئيسية"
+    url: /
+  - title: "التصنيفات"
+    url: /categories/
+  - title: "الوسوم"
+    url: /tags/
+  - title: "الأرشيف"
+    url: /year-archive/
+  - title: "عن المدونة"
+    url: /about/
