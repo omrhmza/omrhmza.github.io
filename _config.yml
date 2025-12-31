@@ -2,3 +2,6 @@ title: "مدونة عمر"
 baseurl: "/blog"
 url: "https://omarhmza.github.io"
 remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-include-cache
+  - jekyll-remote-theme
