@@ -1,4 +1,4 @@
 title: "مدونة عمر"
-baseurl: "blog"
+baseurl: "/blog"
 url: "https://omarhmza.github.io"
 remote_theme: "mmistakes/minimal-mistakes"
