@@ -56,7 +56,7 @@ defaults:
       read_time: true      
       words_per_minute: 150
       breadcrumbs: true    
-      taxonomy: true   
+      show_taxonomy: true   
       categories: true # تأكد من تفعيلها هنا
       tags: true       # تأكد من تفعيلها هنا
      # تفعيل عرض الأوسمة والتصنيفات في نهاية المقال
