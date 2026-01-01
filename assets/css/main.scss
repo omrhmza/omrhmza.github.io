@@ -133,3 +133,21 @@ body {
   direction: ltr !important;
   display: inline-block;
 }
+
+/* إجبار قسم الوسوم والتصنيفات على الظهور */
+.page__taxonomy {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin-top: 2em !important;
+}
+
+.page__taxonomy-item {
+  display: inline-block !important;
+  background: rgba(187, 52, 85, 0.2) !important; /* لون خلفية نيون خفيف */
+  color: #FDD6E8 !important; /* لون النص */
+  margin: 5px !important;
+  padding: 5px 10px !important;
+  border: 1px solid rgba(187, 52, 85, 0.5) !important;
+}
+
