@@ -134,49 +134,58 @@ body {
   display: inline-block;
   }
   
-/* --- تنظيف الهيدر: إخفاء الروابط المباشرة وإبقاء المنيو والبحث --- */
+/* --- التعديل النهائي لتوزيع عناصر الهيدر (استبدال السابق) --- */
 
-// 1. إخفاء قائمة الروابط التي تفرش نفسها في الهيدر
+// 1. حاوية الهيدر الرئيسية - توزيع العناصر على الأطراف
+.masthead__inner-navigation {
+  display: flex !important;
+  flex-direction: row !important; 
+  justify-content: space-between !important; // يدفع الاسم لجهة والأزرار للجهة الأخرى
+  align-items: center !important;
+  width: 100% !important;
+}
+
+// 2. إخفاء الروابط المباشرة (لتظهر فقط في القائمة المنسدلة)
 .masthead__menu .visible-links {
   display: none !important;
 }
 
-// 2. إجبار زر القائمة (الهامبرغر) على الظهور دائماً
+// 3. تجميع أزرار (البحث والمنيو) في حاوية واحدة بجهة اليسار
+.masthead__menu {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 15px !important; // مسافة بين البحث والمنيو
+  float: none !important;
+  margin-right: auto !important; // ضمان دفعها لليسار في RTL
+}
+
+// 4. إجبار زر القائمة (الهامبرغر) على الظهور دائماً
 .masthead__menu-toggle {
   display: inline-block !important;
   visibility: visible !important;
-  color: #FDD6E8 !important; // لون نيون متناسق
   background-color: transparent !important;
   border: none !important;
-  order: 1;
+  color: #FDD6E8 !important;
+  order: 2; // يظهر بعد زر البحث
 }
 
-// 3. ترتيب عناصر الهيدر (الاسم في جهة والأزرار في جهة)
-.masthead__inner-navigation {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  flex-direction: row-reverse !important; // يمين للاسم ويسار للأزرار
-}
-
-// 4. تجميع أزرار (البحث والمنيو) في حاوية واحدة
-.masthead__menu {
-  display: flex !important;
-  align-items: center !important;
-  gap: 15px; // مسافة بين أيقونة البحث والمنيو
-  float: none !important; // إلغاء التعويم القديم
-}
-
-// 5. التأكد من ظهور الاسم والنبذة وزر البحث
-.masthead__menu-item--lg, 
+// 5. زر البحث
 .search__toggle {
   display: inline-block !important;
   visibility: visible !important;
   color: #FDD6E8 !important;
+  order: 1; // يظهر قبل زر المنيو
 }
 
-// 6. لمسة جمالية: إزالة الخطوط الفاصلة التي قد تظهر في بعض المتصفحات
-.masthead {
-  border-bottom: 1px solid rgba(187, 52, 85, 0.3) !important;
+// 6. الاسم والنبذة في جهة اليمين
+.masthead__menu-item--lg {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  order: 0;
 }
 
+.masthead__menu-item--lg a {
+  color: #FDD6E8 !important;
+  text-decoration: none !important;
+}
