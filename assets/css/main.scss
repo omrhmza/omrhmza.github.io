@@ -1,66 +1,80 @@
 ---
-# Minimal Mistakes RTL - Final Fixed Version
+# جيكل يحتاج هذه الأسطر لمعالجة ملف الـ Sass
 ---
 
-/* استدعاء ملفات القالب الأساسية - تأكد من المسار */
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; 
 @import "minimal-mistakes"; 
 
-/* استيراد خط تجوال */
+// 1. استيراد خط تجوال
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
+// متغير اللون الأحمر
 $brand-red: #cc0000;
 
-/* --- الإعدادات الأساسية --- */
+// 2. إعدادات الـ RTL والخط
 html {
-  direction: rtl !important;
+  direction: rtl;
 }
 
 body {
-  font-family: "Tajawal", sans-serif !important;
+  font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif !important;
 }
 
-/* --- الرأس (Header) --- */
+// 3. تعديل الرأس (إزالة الخلفية السيئة)
 .masthead {
   background-color: transparent !important;
   box-shadow: none !important;
   border-bottom: 1px solid #eee;
 }
 
-/* --- بطاقة الكاتب (Morgan Style) --- */
+// 4. مورغان لبطاقة التعريف (إزاحة الصورة للأعلى)
 .author__avatar {
-  margin-top: -60px; /* الإزاحة للأعلى */
+  margin-top: -60px !important;
   border: 4px solid #fff;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* --- الأوسمة وزر فولو (الأحمر) --- */
+// 5. الأوسمة (خلفية حمراء وكتابة بيضاء)
 .page__taxonomy-item {
   background-color: $brand-red !important;
   color: #fff !important;
   border: none !important;
+  text-decoration: none !important;
+  padding: 0.2em 0.6em;
   border-radius: 4px;
+
+  &:hover {
+    background-color: darken($brand-red, 10%) !important;
+  }
 }
 
+// 6. زر فولو (أحمر ونصه أبيض)
 .btn--light-outline {
   background-color: $brand-red !important;
   color: #fff !important;
   border: none !important;
-  font-weight: bold;
+  font-weight: bold !important;
+
+  &:hover {
+    background-color: darken($brand-red, 10%) !important;
+    color: #fff !important;
+  }
 }
 
-/* --- الفواصل والفوتر --- */
+// 7. الفواصل (كما في الفانيلا) والفوتر
 hr {
+  border: 0;
   border-top: 1px solid #eee !important;
+  margin: 2em 0;
 }
 
 .page__footer {
   border-top: 1px solid #eee !important;
+  margin-top: 3em;
   color: #666;
 }
 
-/* --- ضبط الـ RTL للهيكل --- */
+// 8. تعديل تموضع العناصر الأساسية للقالب ليناسب الـ RTL
 .sidebar {
   float: right !important;
   margin-right: 0 !important;
@@ -74,7 +88,12 @@ hr {
   text-align: right;
 }
 
-/* قلب العناوين */
-h1, h2, h3, h4, h5, h6 {
+/* قلب اتجاه عناصر التنقل (Breadcrumbs) */
+.breadcrumbs {
   text-align: right !important;
+}
+
+/* إصلاح اتجاه أسهم التنقل في الأسفل */
+.pagination--pager {
+  float: left !important;
 }
