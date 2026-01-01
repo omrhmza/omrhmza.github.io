@@ -1,4 +1,4 @@
-<div class="page__comments">
+<div class="page__comments custom-giscus-container">
   <h4 class="page__comments-title">التعليقات</h4>
   
   <script src="https://giscus.app/client.js"
@@ -10,8 +10,35 @@
         data-strict="0"
         data-reactions-enabled="1"
         data-emit-metadata="0"
-        data-input-position="top"    data-theme="transparent_dark" data-lang="ar"
+        data-input-position="top"
+        data-theme="transparent_dark" 
+        data-lang="ar"
         crossorigin="anonymous"
         async>
   </script>
 </div>
+
+<style>
+  /* استدعاء خط تجوال */
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+  .custom-giscus-container {
+    /* جعل الخلفية سوداء ببيكسلات شفافة (0.6 تعني 60% سواد) */
+    background-color: rgba(0, 0, 0, 0.6) !important; 
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Tajawal', sans-serif !important;
+  }
+
+  /* تطبيق الخط على العنوان */
+  .page__comments-title {
+    font-family: 'Tajawal', sans-serif !important;
+    font-weight: 700;
+  }
+
+  /* إجبار Giscus على محاذاة الخط (قد لا تتغير النصوص داخل الـ iframe مباشرة لكنها تحسن المظهر العام) */
+  .giscus {
+    font-family: 'Tajawal', sans-serif !important;
+  }
+</style>
