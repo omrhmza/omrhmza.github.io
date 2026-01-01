@@ -3,7 +3,6 @@ url: "https://omrhmza.github.io"
 baseurl: "" 
 remote_theme: "mmistakes/minimal-mistakes"
 minimal_mistakes_skin: "dark"
-locale: "ar"
 title: "عمر حمزة"
 subtitle: "الشاعر الجديد"
 
