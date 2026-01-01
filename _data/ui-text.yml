@@ -41,3 +41,6 @@ ar: &ar
   october: "أكتوبر"
   november: "نوفمبر"
   december: "ديسمبر"
+  tags_label: "الوسوم:"
+  categories_label: "التصنيفات:"
+
