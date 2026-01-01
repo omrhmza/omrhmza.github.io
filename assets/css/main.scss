@@ -1,87 +1,42 @@
 ---
-# Front matter magic
+# التصميم المعتمد لعمر - 2026
 ---
 
-// استيراد القالب الأساسي أولاً
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // لجلب ألوان السكن المختار (مثل dark)
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}"; 
 @import "minimal-mistakes"; 
 
-/* 1. استدعاء خط تجوال */
+/* 1. الخط والاتجاه */
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
-/* متغيرات مخصصة */
+html { direction: rtl; }
+body { font-family: "Tajawal", sans-serif !important; }
+
+/* 2. لمسات عمر (الأحمر والأزرق) */
 $brand-red: #cc0000;
 
-/* 2. الإعدادات العامة والخط */
-body {
-  font-family: "Tajawal", "Segoe UI", Tahoma, sans-serif !important;
+.page__taxonomy-item, .btn--light-outline {
+  background-color: $brand-red !important;
+  color: #fff !important;
+  border: none !important;
+  &:hover { background-color: darken($brand-red, 15%) !important; }
 }
 
-/* 3. تعديل الرأس (Masthead) */
-.masthead {
-  background-color: transparent !important;
-  box-shadow: none !important;
-  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
-}
-
-/* 4. صورة الكاتب (Author Avatar) */
+/* 3. صورة الكاتب المتمردة */
 .author__avatar {
   margin-top: -60px !important;
-  border: 4px solid #1a1a1a; /* لون غامق ليتناسب مع الثيم */
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 4px solid #1a1a1a;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-/* 5. الأوسمة (Tags) باللون الأحمر */
-.page__taxonomy-item {
-  background-color: $brand-red !important;
-  color: #fff !important;
-  border: none !important;
-  text-decoration: none !important;
-  padding: 5px 10px;
-  border-radius: 4px;
-  margin: 2px;
-  display: inline-block;
-
-  &:hover {
-    background-color: darken($brand-red, 15%) !important;
-    color: #fff !important;
-  }
-}
-
-/* 6. زر فولو (Follow Button) */
-.btn--light-outline {
-  background-color: $brand-red !important;
-  color: #fff !important;
-  border: none !important;
-  font-weight: bold !important;
-
-  &:hover {
-    background-color: darken($brand-red, 15%) !important;
-    color: #fff !important;
-  }
-}
-
-/* 7. الفواصل والفوتر */
-hr {
-  border-top: 1px solid rgba(255,255,255,0.1) !important;
-}
-
-.page__footer {
-  border-top: 1px solid rgba(255,255,255,0.1) !important;
-  color: #888;
-}
-
-/* 8. إصلاحات RTL (استخدم الـ Direction فقط واترك القالب يوزع الفلوت) */
-html {
-  direction: rtl;
-}
-
-.page {
+/* 4. تنسيق القصائد (إضافة من عندي لتصميمك) */
+.page__content {
   text-align: right;
+  line-height: 1.8; /* لراحة عين قارئ الشعر */
+  font-size: 1.1em;
 }
 
-/* قلب اتجاهات التنقل */
-.breadcrumbs {
-  text-align: right !important;
+/* 5. شفافية الهيدر */
+.masthead {
+  background-color: rgba(0,0,0,0.2) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
