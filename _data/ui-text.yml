@@ -29,18 +29,5 @@ ar: &ar
   no_results_found: "لا توجد نتائج"
   # أسماء الشهور (تستخدم في التواريخ)
   date_out_of_range: "خارج النطاق"
-  january: "يناير"
-  february: "فبراير"
-  march: "مارس"
-  april: "أبريل"
-  may: "مايو"
-  june: "يونيو"
-  july: "يوليو"
-  august: "أغسطس"
-  september: "سبتمبر"
-  october: "أكتوبر"
-  november: "نوفمبر"
-  december: "ديسمبر"
-  tags_label: "الوسوم:"
   categories_label: "التصنيفات:"
 

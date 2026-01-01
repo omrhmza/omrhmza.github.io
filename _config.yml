@@ -26,7 +26,6 @@ paginate_path: "/page:num/"
 # إعدادات الكاتب
 author:
   name: " عمر حمزة"
-  avatar: "/assets/images/morgan-custom.jpg"
   bio: "أنا شاب سوري أدرس اللغة الإنكليزية...مهتم بالأدب بشكل عام...و الشعر العربي العمودي بشكل خاص..."
   location: "الجمهورية العربية السورية"
   links:
@@ -56,10 +55,7 @@ defaults:
       read_time: true      
       words_per_minute: 150
       breadcrumbs: true    
-      show_taxonomy: true   
-      categories: true # تأكد من تفعيلها هنا
-      tags: true       # تأكد من تفعيلها هنا
-     # تفعيل عرض الأوسمة والتصنيفات في نهاية المقال
+      taxonomy: true   
       toc: false           
       entries_layout: grid 
 
