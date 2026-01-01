@@ -35,7 +35,7 @@ body {
   text-shadow: 0 0px 10px rgba(173, 173, 173, 0.4);
 }
 
-// التوبار (الماستهيد) بلمسة النيون والبلور
+// --- تعديل الهيدر (الماستهيد) ---
 .masthead {
   background: linear-gradient(to right, rgba(20, 20, 30, 0.95), rgba(40, 40, 60, 0.95)) !important;
   backdrop-filter: blur(10px);
@@ -43,16 +43,40 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
+/* إصلاح المربع الشفاف وإزالة الخلفيات الداخلية */
+.masthead__inner-navigation, 
+.masthead__menu, 
+.masthead__menu-item,
+.masthead__menu-item--lg {
+  background-color: transparent !important; // جعل كل الحاويات شفافة
+  border: none !important;
+  box-shadow: none !important;
+}
+
 .masthead__menu-item a {
   color: #FDD6E8 !important;
+  background-color: transparent !important; // ضمان شفافية خلفية الرابط نفسه
   font-weight: bold;
+  text-decoration: none;
+  
   &:hover {
     color: $primary-color !important;
+    background-color: rgba(255, 255, 255, 0.05) !important; // تأثير خفيف جداً عند التمرير
     text-shadow: 0 0 10px rgba(187, 52, 85, 0.7);
+    border-radius: 8px;
   }
 }
 
-// تخصيص بطاقات المقالات (Archive items) لتشبه الـ Article Card في كودك
+// أيقونة البحث
+.search__toggle {
+  background-color: transparent !important;
+  color: #FDD6E8 !important;
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+// تخصيص بطاقات المقالات (Archive items)
 .archive__item {
   background: linear-gradient(to bottom right, rgba(20,20,30,0.8), rgba(40,40,60,0.8));
   border-radius: 15px;
@@ -73,7 +97,7 @@ body {
   a { color: inherit !important; text-decoration: none; }
 }
 
-// الأزرار بستايلك الخاص
+// الأزرار
 .btn--primary {
   background: linear-gradient(135deg, #BB3455, #992f48) !important;
   border: none !important;
@@ -86,7 +110,7 @@ body {
   }
 }
 
-// السايدبار (القائمة الجانبية)
+// السايدبار
 .sidebar {
   background: rgba(10, 10, 15, 0.5);
   border-radius: 15px;
@@ -100,24 +124,26 @@ body {
   }
 }
 
-// ضبط اتجاه العناصر والخطوط للجوال
+// ضبط الجوال
 @media (max-width: 768px) {
   .masthead__menu {
     float: none !important;
     text-align: center;
+    background-color: transparent !important;
   }
-  .archive__item {
-    margin-bottom: 20px;
+  // إزالة الخلفية التي تظهر أحياناً في قائمة الجوال المنسدلة
+  .masthead__menu-item {
+    display: block;
+    width: 100%;
+    background-color: transparent !important;
   }
 }
 
-// إضافات النيون للنصوص المميزة
 .page__title, .archive__subtitle {
   color: $primary-color !important;
   text-shadow: 0 0 10px rgba(187, 52, 85, 0.5);
 }
 
-// منع تضارب الأيقونات
 .fas, .fab, .far, .fa {
   direction: ltr !important;
   display: inline-block;
