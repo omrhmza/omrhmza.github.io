@@ -1,17 +1,17 @@
-# إعدادات الموقع
+# إعدادات الموقع الأساسية
 url: "https://omrhmza.github.io"
 baseurl: "" 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "dark" # الستايل الداكن الذي اخترته
 title: "عمر حمزة"
 subtitle: "الشاعر الجديد"
-locale: "ar"
-# إعدادات البحث واللغة
+locale: "ar-SA" # تحديد المنطقة بدقة يساعد في تحسين الخطوط والتاريخ
+
+# إعدادات البحث
 search: true
 search_full_content: true
 
-# ربط ملف اللغة (تأكد أن اسم الملف داخل مجلد _data هو ui-text.yml)
-# الإضافات
+# الإضافات (Plugins)
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -19,29 +19,42 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
 
-# إعدادات الترقيم التسلسلي (Pagination)
+# إعدادات الترقيم (Pagination) لصفحة المقالات
 paginate: 10
 paginate_path: "/page:num/"
 
-# إعدادات الكاتب
+# إعدادات الكاتب (تعديل لربط صورة الكاتب بصفحة عني)
 author:
-  name: " عمر حمزة"
-  bio: "أنا شاب سوري أدرس اللغة الإنكليزية...مهتم بالأدب بشكل عام...و الشعر العربي العمودي بشكل خاص..."
+  name: "عمر حمزة"
+  bio: "أنا شاب سوري أدرس اللغة الإنكليزية... مهتم بالأدب بشكل عام... والشعر العربي العمودي بشكل خاص..."
   location: "الجمهورية العربية السورية"
+  home: "/about/" # الضغط على اسمك سيفتح صفحة "عني"
   links:
     - label: "تويتر"
       icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/omrhmza"
+    - label: "عني"
+      icon: "fas fa-fw fa-user"
+      url: "/about/"
 
-# تعليقات Giscus
+# إعدادات الأرشيف التلقائي (تم إخراجها من قسم defaults لتعمل بشكل صحيح)
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# تعليقات Giscus (أو أي مزود آخر)
 comments:
   provider: "custom"
 
-# إعدادات مسار التنقل (الخبز)
+# إعدادات مسار التنقل (Breadcrumbs)
 breadcrumbs: true
 
-# الإعدادات الافتراضية (هنا تفعيل الأوسمة واللغة لكل مقال)
+# الإعدادات الافتراضية (Defaults)
 defaults:
+  # إعدادات المقالات
   - scope:
       path: ""
       type: posts
@@ -55,16 +68,17 @@ defaults:
       read_time: true      
       words_per_minute: 150
       breadcrumbs: true    
-      taxonomy: true   
-      toc: false           
-      entries_layout: grid 
-      
-  category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
+      toc: true # تفعيل جدول المحتويات تلقائياً للمقالات الطويلة
+      toc_label: "محتويات القصيدة/المقال"
+      toc_icon: "align-right"
+  
+  # إعدادات الصفحات العادية (مثل عني والأقسام)
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
 
 # إعدادات الروابط الدائمة
 permalink: /:categories/:title/
