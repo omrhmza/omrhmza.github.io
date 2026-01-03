@@ -1,8 +1,6 @@
 ---
 layout: home
 author_profile: true
-title: "عمر حمزة | الشاعر الجديد"
-excerpt: "أهلاً بك في فضاء القصيدة والكلمة"
 ---
 
 <div class="home-actions-grid">
@@ -82,6 +80,3 @@ excerpt: "أهلاً بك في فضاء القصيدة والكلمة"
   }
 </style>
 
----
-
-### آخر المنشورات
