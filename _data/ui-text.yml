@@ -1,33 +1,94 @@
+# 1. تعريف النصوص العربية
 ar: &ar
-  # عام
   page: "صفحة"
   back_to_top: "للأعلى"
   more_label: "المزيد"
   follow_label: "متابعة"
-  # شريط المسار (Breadcrumbs)
   breadcrumb_home: "الرئيسية"
-  # منشورات الصفحة الرئيسية
   recent_posts: "آخر المقالات"
-  # صفحة المقالة
   minute_read: "دقيقة قراءة"
   less_than: "أقل من"
   last_updated: "آخر تحديث:"
   categories_label: "التصنيفات:"
   tags_label: "الوسوم:"
   related_label: "مواضيع ذات صلة"
-  # أزرار المشاركة
   share_on_label: "مشاركة على:"
   share_on_twitter: "تويتر"
   share_on_facebook: "فيسبوك"
   share_on_linkedin: "لينكد إن"
-  # صفحة البحث
   search_label: "بحث"
   search_placeholder_text: "أدخل كلمة البحث..."
   results_found_any: "نتائج البحث"
   results_found_one: "نتيجة واحدة"
   results_found_other: "نتائج"
   no_results_found: "لا توجد نتائج"
-  # أسماء الشهور (تستخدم في التواريخ)
   date_out_of_range: "خارج النطاق"
-  categories_label: "التصنيفات:"
 
+# 2. تعريف النصوص الإنجليزية
+en: &en
+  page: "Page"
+  back_to_top: "Back to top"
+  more_label: "More"
+  follow_label: "Follow"
+  breadcrumb_home: "Home"
+  recent_posts: "Recent Posts"
+  minute_read: "minute read"
+  less_than: "Less than"
+  last_updated: "Last updated:"
+  categories_label: "Categories:"
+  tags_label: "Tags:"
+  related_label: "Related Posts"
+  share_on_label: "Share on:"
+  share_on_twitter: "Twitter"
+  share_on_facebook: "Facebook"
+  share_on_linkedin: "LinkedIn"
+  search_label: "Search"
+  search_placeholder_text: "Enter search term..."
+  results_found_any: "Search results"
+  results_found_one: "One result"
+  results_found_other: "Results"
+  no_results_found: "No results found"
+  date_out_of_range: "Date out of range"
+
+# 3. تعريف النصوص الإندونيسية (Bahasa Indonesia)
+id: &id
+  page: "Halaman"
+  back_to_top: "Kembali ke atas"
+  more_label: "Selengkapnya"
+  follow_label: "Ikuti"
+  breadcrumb_home: "Beranda"
+  recent_posts: "Postingan Terbaru"
+  minute_read: "menit baca"
+  less_than: "Kurang dari"
+  last_updated: "Terakhir diperbarui:"
+  categories_label: "Kategori:"
+  tags_label: "Tag:"
+  related_label: "Postingan Terkait"
+  share_on_label: "Bagikan di:"
+  share_on_twitter: "Twitter"
+  share_on_facebook: "Facebook"
+  share_on_linkedin: "LinkedIn"
+  search_label: "Cari"
+  search_placeholder_text: "Masukkan kata kunci..."
+  results_found_any: "Hasil pencarian"
+  results_found_one: "Satu hasil ditemukan"
+  results_found_other: "Hasil"
+  no_results_found: "Hasil tidak ditemukan"
+  date_out_of_range: "Tanggal di luar jangkauan"
+
+# ربط اللغات بالـ Locales المستخدمة في المتصفح والقالب
+ar-SA:
+  <<: *ar
+en-US:
+  <<: *en
+en-GB:
+  <<: *en
+id-ID:
+  <<: *id
+# لضمان العمل في حال استدعاء المفتاح المختصر
+ar:
+  <<: *ar
+en:
+  <<: *en
+id:
+  <<: *id

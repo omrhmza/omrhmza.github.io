@@ -1,11 +1,47 @@
+# 1. القائمة العربية (الأساسية)
 main:
+  - title: "🌐 English"
+    url: /en/
+  - title: "🌐 Bahasa"
+    url: /id/
   - title: "الرئيسية"
     url: /
   - title: "التصنيفات"
     url: /categories/
-  - title: "الوسوم"
-    url: /tags/
   - title: "الأرشيف"
     url: /year-archive/
   - title: "عن المدونة"
     url: /about/
+
+
+# 2. القائمة الإنجليزية (English Navigation)
+main_en:
+ - title: "🌐 العربية"
+    url: /
+  - title: "🌐 Bahasa"
+    url: /id/
+  - title: "Home"
+    url: /en/
+  - title: "Categories"
+    url: /en/categories/
+  - title: "Archive"
+    url: /en/year-archive/
+  - title: "About"
+    url: /en/about/
+ 
+
+# 3. القائمة الإندونيسية (Indonesian Navigation)
+main_id:
+ - title: "🌐 العربية"
+    url: /
+  - title: "🌐 English"
+    url: /en/
+  - title: "Beranda"
+    url: /id/
+  - title: "Kategori"
+    url: /id/categories/
+  - title: "Arsip"
+    url: /id/year-archive/
+  - title: "Tentang"
+    url: /id/about/
+ 
