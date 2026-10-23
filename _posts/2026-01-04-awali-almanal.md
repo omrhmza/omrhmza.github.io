@@ -2,8 +2,6 @@
 layout: single
 title: "قصيدة عوالي المنال"
 date: 2026-01-04
-header: 
-  teaser: ""
 categories: [ديواني]
 tags: [البحر المتقارب, شعر ,فخر ,حماسة ,اتباعي]
 ---
