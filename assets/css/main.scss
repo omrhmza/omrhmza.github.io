@@ -438,3 +438,104 @@ body {
   background: rgba(214, 51, 108, 0.55);
   color: #fff;
 }
+
+
+// ============================================================
+//  GLASS AURA — إصلاحات الجولة الثانية (بعد معاينة السكرينات)
+// ============================================================
+
+// 1) الهيدر: إلغاء الكتلة السوداء الداخلية — الشفافية للعناصر الداخلية
+.masthead__inner-wrap,
+.greedy-nav {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+// 2) هالة أقوى وموزّعة على طول الصفحة (مو بس بالزوايا)
+body {
+  background-image:
+    radial-gradient(620px 480px at 12% 4%, rgba(187, 52, 85, 0.40), rgba(187, 52, 85, 0) 62%),
+    radial-gradient(720px 540px at 88% 10%, rgba(109, 88, 246, 0.32), rgba(109, 88, 246, 0) 62%),
+    radial-gradient(680px 520px at 6% 58%, rgba(147, 51, 234, 0.20), rgba(147, 51, 234, 0) 62%),
+    radial-gradient(700px 540px at 94% 62%, rgba(187, 52, 85, 0.24), rgba(187, 52, 85, 0) 62%),
+    radial-gradient(560px 460px at 78% 92%, rgba(255, 45, 120, 0.16), rgba(255, 45, 120, 0) 62%),
+    radial-gradient(900px 620px at 50% 112%, rgba(45, 212, 191, 0.18), rgba(45, 212, 191, 0) 62%),
+    radial-gradient(1000px 700px at 50% 38%, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0) 65%),
+    linear-gradient(180deg, #0c0c1e 0%, #08080f 100%) !important;
+}
+
+// 3) زجاج أفتح حتى يُقرأ كزجاج فوق أي خلفية
+.archive__item,
+.sidebar,
+.toc {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.045)) !important;
+}
+
+.page__content {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.03)) !important;
+}
+
+// 4) الأزرار والوسوم: زجاج ملوّن خفيف بدل القرمزي المصمت
+.btn {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.34), rgba(153, 47, 72, 0.16)) !important;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(214, 51, 108, 0.48), rgba(187, 52, 85, 0.24)) !important;
+  }
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.45), rgba(153, 47, 72, 0.22)) !important;
+}
+
+.page__taxonomy-item {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.32), rgba(153, 47, 72, 0.15)) !important;
+}
+
+// 5) الفهرس: قصّ الشريط القرمزي داخل الصندوق وتزجيجه
+.toc {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.toc .nav__title {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.45), rgba(153, 47, 72, 0.25)) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 0 !important;
+}
+
+.toc__menu {
+  padding: 10px 14px;
+}
+
+// 6) هيرو صفحة «عن عمر»: بدل الفراغ الأسود — هالة زجاجية قصيرة
+.page__hero--overlay {
+  background: radial-gradient(700px 300px at 80% 20%, rgba(187, 52, 85, 0.35), rgba(187, 52, 85, 0) 65%),
+              radial-gradient(600px 280px at 15% 80%, rgba(109, 88, 246, 0.28), rgba(109, 88, 246, 0) 65%),
+              linear-gradient(150deg, #141428, #0a0a16) !important;
+  padding: 2.2em 0 !important;
+  min-height: 0 !important;
+}
+
+.page__hero--overlay::before {
+  background: transparent !important;
+}
+
+// 7) تباين النصوص الباهتة
+.archive__item-title,
+.archive__item-title a {
+  color: #f0839f !important;
+}
+
+.author__bio,
+.author__location,
+.author__urls li a,
+.sidebar .author__name {
+  color: #d9e1ec !important;
+}
+
+.breadcrumbs ol li,
+.breadcrumbs .current {
+  color: #c9b8c4 !important;
+}
