@@ -281,3 +281,160 @@ hr {
   border-radius: 25px; /* غير الرقم 15 للتحكم بدرجة الانحناء */
   border: 1px solid $primary-color;
 }
+
+
+// ============================================================
+//  GLASS AURA — تحويل الموقع كاملًا إلى زجاجي (بطلب عمر 2026-10-24)
+//  يُلحق بآخر الملف ليتغلّب على ما قبله، وحذفه يعيد الستايل السابق
+// ============================================================
+
+// خليط الزجاج الأساسي
+@mixin glass-panel {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  backdrop-filter: blur(18px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+// --- هالة الخلفية: توهّجات ملوّنة ثابتة خلف الزجاج ---
+body {
+  animation: none !important;
+  background-color: #07070f !important;
+  background-image:
+    radial-gradient(620px 480px at 12% 6%, rgba(187, 52, 85, 0.34), rgba(187, 52, 85, 0) 62%),
+    radial-gradient(720px 540px at 88% 14%, rgba(109, 88, 246, 0.27), rgba(109, 88, 246, 0) 62%),
+    radial-gradient(560px 460px at 78% 88%, rgba(255, 45, 120, 0.15), rgba(255, 45, 120, 0) 62%),
+    radial-gradient(900px 620px at 50% 112%, rgba(45, 212, 191, 0.15), rgba(45, 212, 191, 0) 62%),
+    linear-gradient(180deg, #0a0a1a 0%, #07070f 100%) !important;
+  background-attachment: fixed !important;
+  background-size: auto !important;
+  text-shadow: none;
+}
+
+// --- الهيدر زجاجي ---
+.masthead {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35) !important;
+}
+
+.greedy-nav .hidden-links {
+  @include glass-panel;
+  border-radius: 16px;
+}
+
+// --- بطاقات المقالات زجاجية ---
+.archive__item {
+  @include glass-panel;
+  border-radius: 20px;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 92, 150, 0.45) !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 24px rgba(187, 52, 85, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+  }
+}
+
+.archive__item-teaser img {
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+// --- السايدبار وبطاقة الكاتب ---
+.sidebar {
+  @include glass-panel;
+  border-radius: 20px;
+}
+
+.author__avatar img {
+  border: 2px solid rgba(255, 255, 255, 0.25) !important;
+  box-shadow: 0 0 22px rgba(187, 52, 85, 0.35);
+}
+
+// --- فهرس المحتويات ---
+.toc {
+  @include glass-panel;
+  border-radius: 18px;
+}
+
+// --- نص المقالة: لوح زجاجي كبير ---
+.page__content {
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  padding: 28px 30px;
+}
+
+// --- الأزرار: زجاج ملوّن بالقرمزي ---
+.btn {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.55), rgba(153, 47, 72, 0.30)) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  backdrop-filter: blur(12px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 6px 22px rgba(187, 52, 85, 0.30), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(214, 51, 108, 0.65), rgba(187, 52, 85, 0.38)) !important;
+    box-shadow: 0 10px 28px rgba(187, 52, 85, 0.45), 0 0 18px rgba(255, 45, 120, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+.page__taxonomy-item {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.5), rgba(153, 47, 72, 0.28)) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 14px !important;
+}
+
+// --- الترقيم ---
+.pagination li a {
+  @include glass-panel;
+  border-radius: 12px;
+}
+
+.pagination li a.current,
+.pagination li a.disabled {
+  background: linear-gradient(135deg, rgba(187, 52, 85, 0.55), rgba(153, 47, 72, 0.3)) !important;
+}
+
+// --- الفوتر ---
+.page__footer {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)) !important;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+// --- التنبيهات ---
+.notice, .notice--primary, .notice--info, .notice--warning, .notice--success, .notice--danger {
+  @include glass-panel;
+  border-radius: 16px;
+  color: #f2e9ec;
+}
+
+// --- البحث بملء الشاشة ---
+.search-content {
+  background: rgba(7, 7, 15, 0.72) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.search-content__inner-wrap .search-input {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  border-radius: 16px !important;
+  color: #fff !important;
+}
+
+// --- تحديد النص ---
+::selection {
+  background: rgba(214, 51, 108, 0.55);
+  color: #fff;
+}
