@@ -539,3 +539,78 @@ body {
 .breadcrumbs .current {
   color: #c9b8c4 !important;
 }
+
+// ============================================================
+//  REACT BITS PORTS — تأثيرات منقولة من مكتبة React Bits
+//  (بطلب عمر 2026-10-27؛ تُحذف هذه الكتلة + ملف rb-effects.js للتراجع)
+//  1) Aurora: طبقة توهّج تنساب ببطء خلف الزجاج
+//  2) Shiny Text: لمعة ضوئية تعبر العناوين
+//  3) Scroll Reveal: ظهور متدرّج عند التمرير (مع rb-effects.js)
+// ============================================================
+
+// --- 1) Aurora ---
+.rb-aurora {
+  position: fixed;
+  inset: -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(560px 420px at 18% 22%, rgba(187, 52, 85, 0.32), rgba(187, 52, 85, 0) 65%),
+    radial-gradient(640px 480px at 82% 18%, rgba(109, 88, 246, 0.26), rgba(109, 88, 246, 0) 65%),
+    radial-gradient(520px 420px at 68% 86%, rgba(45, 212, 191, 0.15), rgba(45, 212, 191, 0) 65%),
+    radial-gradient(460px 380px at 30% 92%, rgba(255, 45, 120, 0.13), rgba(255, 45, 120, 0) 65%);
+  filter: blur(55px) saturate(130%);
+  opacity: 0.55;
+  animation: rb-aurora-drift 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes rb-aurora-drift {
+  from { transform: translate3d(-2.5%, -1.5%, 0) scale(1); }
+  to   { transform: translate3d(2.5%, 2%, 0) scale(1.09); }
+}
+
+// المحتوى فوق طبقة الأورورا
+.initial-content,
+.page__footer {
+  position: relative;
+  z-index: 1;
+}
+
+// --- 2) Shiny Text: اسم الموقع وعناوين الصفحات ---
+.masthead .site-title,
+.page__title {
+  background: linear-gradient(110deg, #f3e6ec 25%, #ff9ebb 42%, #ffffff 50%, #ff9ebb 58%, #f3e6ec 75%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rb-shine 7s linear infinite;
+}
+
+@keyframes rb-shine {
+  to { background-position: -220% center; }
+}
+
+// --- 3) Scroll Reveal ---
+.rb-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(5px);
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+}
+
+.rb-reveal.rb-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+// --- احترام تقليل الحركة ---
+@media (prefers-reduced-motion: reduce) {
+  .rb-aurora { animation: none; }
+  .masthead .site-title,
+  .page__title { animation: none; }
+  .rb-reveal { opacity: 1; transform: none; filter: none; transition: none; }
+}
